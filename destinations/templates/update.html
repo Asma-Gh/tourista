@@ -4,9 +4,19 @@
 {% block title %}Update{% endblock title %}
 
 {% block content %}
-<form action="{% url 'destination-update' destination_obj.id %}" method="POST" enctype="multipart/form-data">
+<div class="card">
+		<img src="/media/plane_myths_big.jpg" class="card-img">
+		<div class="card-img-overlay">
+			<div class="card-body m-5 p-5">
+				<p class="card-text font-weight-bold align-text-bottom">Update Destination</p>
+			</div>
+		</div>
+</div>
+	<form action="{% url 'destination-update' destination_obj.id %}" method="POST" enctype="multipart/form-data">
   {% csrf_token %}
-  {{form.as_p}}
-  <input type="submit" value="Update">
+  {{form|crispy}}
+  <input type="submit" class="btn btn-outline-primary" value="Update">
 </form>
+
 {% endblock content %}
+

@@ -4,9 +4,20 @@
 {% block title %}Create{% endblock title %}
 
 {% block content %}
-<form action="{% url 'destination-create' %}" method="POST" enctype="multipart/form-data">
-  {% csrf_token %}
-  {{form.as_p}}
-  <input type="submit" value="Create">
-</form>
+<div class="card">
+		<img src="/media/plane_myths_big.jpg" class="card-img">
+		<div class="card-img-overlay">
+			<div class="card-body m-5 p-5">
+				<p class="card-text font-weight-bold align-text-bottom">Add New Destination</p>
+			</div>
+		</div>
+</div>
+	<form action="{% url 'destination-create' %}" method="POST" enctype="multipart/form-data">
+	  {% csrf_token %}
+	  {{form|crispy}}
+	  <input type="submit" class="btn btn-outline-primary" value="Create">
+	</form>
+
 {% endblock content %}
+
+
