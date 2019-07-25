@@ -19,7 +19,7 @@
 
 <body>
   
-  <!-- Navbar -->
+ <!-- Navbar
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="{% url 'destination-list' %}">Tourista</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,10 +34,18 @@
       </ul>
     </div>
   </nav>
-  <!-- End Navbar -->
+ End Navbar -->
+  <div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4"><a href="{% url 'destination-list' %}">Tourista</a></h1>
+    <p class="lead">Welcome to Tourista. It's the best site to have fun Exploring, Adding and even Updating your favorite Travel Destination!</p>
+    <a class="btn btn-outline-primary btn-lg" href="{% url 'destination-create' %}" role="button">Add a destination</a>
+  </div>
+</div>
 
   <div class="container">
-    {% block content %} {% endblock content %}
+    {% block content %}
+    {% endblock content %}
   </div>
 
   <!-- Add your bootstrap script tags here -->
